@@ -5,7 +5,13 @@
   "repository": "git@github.com:escoladedev/biblioteca-back.git",
   "author": "danielbarrosdeoliveira <danielbarrosdeoliveira@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
   "dependencies": {
     "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
