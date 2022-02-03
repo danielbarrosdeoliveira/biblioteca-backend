@@ -6,7 +6,8 @@
   "author": "danielbarrosdeoliveira <danielbarrosdeoliveira@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.17.2"
