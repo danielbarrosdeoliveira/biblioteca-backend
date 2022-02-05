@@ -13,9 +13,13 @@
     "express": "^4.17.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "nodemon": "^2.0.15",
     "sequelize": "^6.15.0",
     "sequelize-cli": "^6.4.1",
     "sqlite3": "^5.0.2"
+=======
+    "nodemon": "^2.0.15"
+>>>>>>> 67379ee4f4057a1fbeda838e7a8bf92bb61a46d7
   }
 }
