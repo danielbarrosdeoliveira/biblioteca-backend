@@ -1,10 +1,10 @@
-import { Router } from "express";
-import { CreateExampleController } from "../controllers/CreateExampleController";
+import { Router } from 'express'
+import { CreateExampleController } from '../controllers/CreateExampleController'
 
-const router = Router();
+const router = Router()
 
-const createExampleController = new CreateExampleController();
+const createExampleController = new CreateExampleController()
 
-router.post("/examples", createExampleController.store);
+router.post('/examples', createExampleController.store)
 
-export { router };
+export { router }
