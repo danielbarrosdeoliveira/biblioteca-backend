@@ -1,6 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
-const tableName = "examples";
+const tableName = 'examples'
 
 export class Examples1644109695983 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -9,30 +9,30 @@ export class Examples1644109695983 implements MigrationInterface {
         name: tableName,
         columns: [
           {
-            name: "id",
-            type: "uuid",
-            isPrimary: true,
+            name: 'id',
+            type: 'uuid',
+            isPrimary: true
           },
           {
-            name: "name",
-            type: "varchar",
+            name: 'name',
+            type: 'varchar'
           },
           {
-            name: "created_at",
-            type: "timestamp",
-            default: "now()",
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()'
           },
           {
-            name: "updated_at",
-            type: "timestamp",
-            default: "now()",
-          },
-        ],
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()'
+          }
+        ]
       })
-    );
+    )
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable(tableName);
+    await queryRunner.dropTable(tableName)
   }
 }

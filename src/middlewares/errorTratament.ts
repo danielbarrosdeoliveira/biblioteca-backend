@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from 'express'
 
 export function errorTratament(
   err: Error,
@@ -8,12 +8,12 @@ export function errorTratament(
 ) {
   if (err instanceof Error) {
     return response.status(400).json({
-      error: err.message,
-    });
+      error: err.message
+    })
   }
 
   return response.status(500).json({
-    status: "error",
-    message: "Internal Server Error",
-  });
+    status: 'error',
+    message: 'Internal Server Error'
+  })
 }

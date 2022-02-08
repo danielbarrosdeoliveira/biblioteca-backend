@@ -1,34 +1,34 @@
-import { getCustomRepository } from "typeorm";
-import { ExamplesRepositories } from "../repositories/ExamplesRepositories";
+import { getCustomRepository } from 'typeorm'
+import { ExamplesRepositories } from '../repositories/ExamplesRepositories'
 
 interface IExampleRequest {
-  name: string;
+  name: string
 }
 
 class CreateExampleService {
   async execute({ name }: IExampleRequest) {
-    const examplesRepository = getCustomRepository(ExamplesRepositories);
+    const examplesRepository = getCustomRepository(ExamplesRepositories)
 
     if (!name) {
-      throw new Error("name is required");
+      throw new Error('name is required')
     }
 
     const exampleAlreadyExists = await examplesRepository.findOne({
-      name,
-    });
+      name
+    })
 
     if (exampleAlreadyExists) {
-      throw new Error("name example already exists");
+      throw new Error('name example already exists')
     }
 
     const example = examplesRepository.create({
-      name,
-    });
+      name
+    })
 
-    await examplesRepository.save(example);
+    await examplesRepository.save(example)
 
-    return example;
+    return example
   }
 }
 
-export { CreateExampleService };
+export { CreateExampleService }

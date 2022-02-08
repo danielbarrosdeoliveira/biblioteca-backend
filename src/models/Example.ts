@@ -3,33 +3,33 @@ import {
   PrimaryColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
-} from "typeorm";
-import { v4 as uuid } from "uuid";
+  UpdateDateColumn
+} from 'typeorm'
+import { v4 as uuid } from 'uuid'
 
-@Entity("examples")
+@Entity('examples')
 class Example {
   @PrimaryColumn()
-  readonly id: string;
+  readonly id: string
 
   @Column()
-  name: string;
+  name: string
 
   @CreateDateColumn({
-    name: "created_at",
+    name: 'created_at'
   })
-  createdAt: Date;
+  createdAt: Date
 
   @UpdateDateColumn({
-    name: "updated_at",
+    name: 'updated_at'
   })
-  updatedAt: Date;
+  updatedAt: Date
 
   constructor() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = uuid()
     }
   }
 }
 
-export { Example };
+export { Example }
