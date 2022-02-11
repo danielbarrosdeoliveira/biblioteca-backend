@@ -6,7 +6,7 @@
   "author": "danielbarrosdeoliveira <danielbarrosdeoliveira@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/index.ts",
+    "start": "node dist/index.js",
     "build": "tsc",
     "postinstall": "npm run build",
     "dev": "ts-node-dev --ignore-watch node_modules src/index.ts",
