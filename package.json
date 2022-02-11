@@ -6,8 +6,9 @@
   "author": "danielbarrosdeoliveira <danielbarrosdeoliveira@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node src/index.ts",
     "build": "tsc",
+    "postinstall": "yarn build",
     "dev": "ts-node-dev --ignore-watch node_modules src/index.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
