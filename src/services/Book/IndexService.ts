@@ -1,9 +1,9 @@
 import { getCustomRepository } from 'typeorm'
-import { BooksRepositories } from '../../repositories/BooksRepositories'
+import { BooksRepository } from '../../repositories/BooksRepository'
 
 class IndexService {
   async execute() {
-    const booksRepositories = getCustomRepository(BooksRepositories)
+    const booksRepositories = getCustomRepository(BooksRepository)
 
     const books = await booksRepositories.find()
 

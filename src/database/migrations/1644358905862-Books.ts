@@ -21,7 +21,8 @@ export class Books1644358905862 implements MigrationInterface {
           {
             name: 'isbn',
             type: 'string',
-            isNullable: false
+            isNullable: false,
+            isUnique: true
           },
           {
             name: 'publication-date',
