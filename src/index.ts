@@ -3,14 +3,15 @@ import express from 'express'
 import 'express-async-errors'
 
 import { errorTratament } from './middlewares/errorTratament'
-import { router } from './routes'
+import { booksRoutes, examplesRoutes } from './routes'
 
 import './database'
 
 const app = express()
 app.use(express.json())
 
-app.use(router)
+app.use(booksRoutes)
+app.use(examplesRoutes)
 
 app.use(errorTratament)
 
