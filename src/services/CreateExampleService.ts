@@ -1,5 +1,5 @@
 import { getCustomRepository } from 'typeorm'
-import { ExamplesRepositories } from '../repositories/ExamplesRepositories'
+import { ExamplesRepository } from '../repositories/ExamplesRepository'
 
 interface IExampleRequest {
   name: string
@@ -7,7 +7,7 @@ interface IExampleRequest {
 
 class CreateExampleService {
   async execute({ name }: IExampleRequest) {
-    const examplesRepository = getCustomRepository(ExamplesRepositories)
+    const examplesRepository = getCustomRepository(ExamplesRepository)
 
     if (!name) {
       throw new Error('name is required')
