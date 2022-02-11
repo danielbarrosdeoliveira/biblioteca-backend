@@ -15,6 +15,6 @@ app.use(examplesRoutes)
 
 app.use(errorTratament)
 
-app.listen(process.env.PORT || 3333, () => {
-  console.log('Back-end started! 🚀🚀')
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Back-end started! 🚀')
 })

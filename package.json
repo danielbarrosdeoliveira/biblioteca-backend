@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "tsc",
-    "postinstall": "yarn build",
+    "build": "tsc --build tsconfig.json",
     "dev": "ts-node-dev --ignore-watch node_modules src/index.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
