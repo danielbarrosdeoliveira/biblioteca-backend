@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "start": "node dist/index.js",
+    "start": "NODE_PATH=./dist node ./dist/index.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/index.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.j"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "postinstall": "yarn build"
   },
   "dependencies": {
     "express": "^4.17.2",
