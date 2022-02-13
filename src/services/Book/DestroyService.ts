@@ -1,30 +1,38 @@
-import { getCustomRepository } from 'typeorm'
-import { BooksRepository } from '../../repositories'
 import { validate } from 'uuid'
-
+import prismaClient from '../../prisma'
 interface IBookRequest {
   id: string
 }
 
 class DestroyService {
   async execute({ id }: IBookRequest) {
-    const booksRepository = getCustomRepository(BooksRepository)
-
     const isValidUuid = validate(id)
 
     if (!isValidUuid) {
-      throw new Error('Please, send a valid ID')
+      throw new Error('Please, send a valid ID!')
     }
 
-    const book = await booksRepository.find({ id })
+    const book = await prismaClient.book.findFirst({
+      where: {
+        id
+      }
+    })
 
-    if (!book.length) {
-      throw new Error('No books found with this ID!')
+    if (!book) {
+      throw new Error('book not found!')
     }
 
-    const result = await booksRepository.remove(book)
+    try {
+      const result = await prismaClient.book.delete({
+        where: {
+          id
+        }
+      })
 
-    return result
+      return result
+    } catch (error) {
+      return error
+    }
   }
 }
 

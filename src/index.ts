@@ -1,19 +1,14 @@
-import 'reflect-metadata'
 import express from 'express'
-import 'express-async-errors'
 
 import { errorTratament } from './middlewares/errorTratament'
-import { booksRoutes, examplesRoutes } from './routes'
-
-import './database'
+import { booksRoutes } from './routes'
 
 const app = express()
 app.use(express.json())
 
-app.use(booksRoutes)
-app.use(examplesRoutes)
-
 app.use(errorTratament)
+
+app.use(booksRoutes)
 
 app.listen(process.env.PORT || 5000, () => {
   console.log('Back-end started! 🚀')

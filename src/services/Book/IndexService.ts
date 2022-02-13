@@ -1,11 +1,12 @@
-import { getCustomRepository } from 'typeorm'
-import { BooksRepository } from '../../repositories/BooksRepository'
+import prismaClient from '../../prisma'
 
 class IndexService {
   async execute() {
-    const booksRepositories = getCustomRepository(BooksRepository)
-
-    const books = await booksRepositories.find()
+    const books = await prismaClient.book.findMany({
+      orderBy: {
+        title: 'desc'
+      }
+    })
 
     return books
   }
