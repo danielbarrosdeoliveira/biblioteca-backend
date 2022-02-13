@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "target": "es2017",
     "module": "CommonJS",
     "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "strictPropertyInitialization": false,
+    "strict": false,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/prisma/index.ts"],
   "exclude": ["node_modules"]
 }

@@ -8,16 +8,14 @@
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "NODE_PATH=./dist node ./dist/index.js",
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/index.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "postinstall": "yarn build"
+    "dev": "ts-node-dev --exit-child src/index.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
+    "@prisma/client": "3.9.2",
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
-    "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
-    "typeorm": "^0.2.41",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -41,6 +39,7 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1",
+    "prisma": "^3.9.2",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.5"
   }
