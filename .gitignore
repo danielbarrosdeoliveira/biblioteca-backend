@@ -1,2 +1,4 @@
 node_modules
 /.env
+/prisma/database/biblioteca.db
+/prisma/database/biblioteca.db-journal
