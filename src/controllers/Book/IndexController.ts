@@ -3,9 +3,9 @@ import { IndexService } from '../../services/Book'
 
 class IndexController {
   async index(request: Request, response: Response) {
-    const createExampleService = new IndexService()
+    const indexService = new IndexService()
 
-    const books = await createExampleService.execute()
+    const books = await indexService.execute()
 
     return response.json(books)
   }
