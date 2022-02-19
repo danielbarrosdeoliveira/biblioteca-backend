@@ -9,7 +9,7 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "NODE_PATH=./dist node ./dist/index.js",
     "dev": "ts-node-dev --exit-child src/index.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "postinstall": "npx prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "3.9.2",

@@ -2,11 +2,7 @@ import prismaClient from '../../prisma'
 
 class IndexService {
   async execute() {
-    const books = await prismaClient.book.findMany({
-      orderBy: {
-        title: 'desc'
-      }
-    })
+    const books = await prismaClient.book.findMany()
 
     return books
   }
