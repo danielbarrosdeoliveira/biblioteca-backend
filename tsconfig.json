@@ -6,7 +6,7 @@
     "outDir": "dist",
     "esModuleInterop": true,
     "strict": false,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "lib": ["esnext"]
   },
   "include": ["src/**/*.ts", "src/prisma/index.ts"],

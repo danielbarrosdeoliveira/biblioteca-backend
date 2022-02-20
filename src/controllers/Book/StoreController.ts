@@ -3,14 +3,16 @@ import { StoreService } from '../../services/Book'
 
 class StoreController {
   async store(request: Request, response: Response) {
-    const book = request.body
+    const data = request.body
 
-    console.log(book)
     const storeService = new StoreService()
 
-    const createdBook = await storeService.execute(book)
-
-    return response.json(createdBook)
+    try {
+      const book = await storeService.execute(data)
+      return response.status(200).json({ book })
+    } catch (error) {
+      return response.status(400).json({ error: error.message })
+    }
   }
 }
 

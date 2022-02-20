@@ -9,17 +9,17 @@ datasource db {
 }
 
 model Book {
-  id               String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  title            String
-  isbn             String   @unique
-  publication_date DateTime
-  publish_company  String
-  pages            Int
-  author           String
-  cover_image      String
-  gender           String
-  created_at       DateTime @default(now())
-  updated_at       DateTime
+  id              String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  title           String
+  isbn            String    @unique
+  publicationDate DateTime  @map("publication_date")
+  publishCompany  String    @map("publish_company")
+  pages           Int
+  author          String
+  coverImage      String    @map("cover_image")
+  gender          String
+  createdAt       DateTime? @default(now()) @map("created_at") @db.Timestamp
+  updatedAt       DateTime? @updatedAt @map("updated_at")
 
   @@map("books")
 }

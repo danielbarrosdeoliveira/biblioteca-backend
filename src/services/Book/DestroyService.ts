@@ -1,17 +1,12 @@
-import { validate } from 'uuid'
+import { response } from 'express'
 import prismaClient from '../../prisma'
+
 interface IBookRequest {
   id: string
 }
 
 class DestroyService {
   async execute({ id }: IBookRequest) {
-    const isValidUuid = validate(id)
-
-    if (!isValidUuid) {
-      throw new Error('Please, send a valid ID!')
-    }
-
     const book = await prismaClient.book.findFirst({
       where: {
         id
@@ -23,13 +18,11 @@ class DestroyService {
     }
 
     try {
-      const result = await prismaClient.book.delete({
+      await prismaClient.book.delete({
         where: {
           id
         }
       })
-
-      return result
     } catch (error) {
       return error
     }

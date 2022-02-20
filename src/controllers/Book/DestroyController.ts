@@ -8,7 +8,8 @@ class DestroyController {
     const destroyService = new DestroyService()
 
     try {
-      await destroyService.execute({ id })
+      const result = await destroyService.execute({ id })
+      return response.status(200).json({ result })
     } catch (error) {
       return response.status(400).json({ error: error.message })
     }
