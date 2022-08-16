@@ -1,11 +1,10 @@
-import { response } from 'express'
 import prismaClient from '../../prisma'
 
 interface IBookRequest {
   id: string
 }
 
-class DestroyService {
+class ShowService {
   async execute({ id }: IBookRequest) {
     const book = await prismaClient.book.findFirst({
       where: {
@@ -17,16 +16,8 @@ class DestroyService {
       throw new Error('book not found!')
     }
 
-    try {
-      await prismaClient.book.delete({
-        where: {
-          id
-        }
-      })
-    } catch (error) {
-      return error
-    }
+    return book
   }
 }
 
-export { DestroyService }
+export { ShowService }

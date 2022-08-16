@@ -3,15 +3,16 @@ import { DestroyService } from '../../services/Book'
 
 class DestroyController {
   async destroy(request: Request, response: Response) {
-    const destroyService = new DestroyService()
-
     const { id } = request.params
 
-    const result = await destroyService.execute({ id })
+    const destroyService = new DestroyService()
 
-    console.log(result)
-
-    return response.status(200).send()
+    try {
+      const result = await destroyService.execute({ id })
+      return response.status(200).json({ result })
+    } catch (error) {
+      return response.status(400).json({ error: error.message })
+    }
   }
 }
 
