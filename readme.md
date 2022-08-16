@@ -9,23 +9,21 @@ Ness projeto estamos usando as seguintes tecnologias:
 - [Node.js](https://nodejs.org/en/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/pt-br/)
-- [TypeORM](https://typeorm.io/)
-- [SQLite](https://www.sqlite.org/index.html)
+- [Prisma ORM](https://www.prisma.io/)
+- [MongoDB](https://www.mongodb.com/)
 
 ## 💻 Projeto
 
-Esse projeto foi criado com intuito de praticar em grupo, com pessoas da comunidade [Escola de Devs](https://discord.gg/yVHQgweC5m)
+Esse projeto foi criado com intuito de praticar backend, sendo um dev Frontend, foi um desafio muito bom para compreender esse outro lado da força.
 
 ## 🧑‍💻 Pessoas envolvidas no Projeto
 
 - [Daniel Oliveira](https://github.com/danielbarrosdeoliveira)
-- [Hercules Santos](https://github.com/herculesdevbr)
 
 ## 🚀 Como executar
 
 - Clone o repositório
 - Execute `yarn` para baixar as dependências
-- Execute `yarn typeorm migration:run` para criar as tabelas do banco de dados.
 - Execute `yarn dev` para iniciar a aplicação.
 
 Por fim, a aplicação estará disponível em `http://localhost:3000`
